@@ -1,0 +1,762 @@
+<html>
+
+   <head>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/all.css">
+        <meta charset="UTF-8">
+      
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+     
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libertinus+Math&family=Roboto:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> 
+
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   </head>
+
+   <body>
+
+ <nav class="navbar navbar-expand-lg navbar-light" style="opacity: 0.8;">
+
+  
+    <div class="container-fluid">
+      <img src="images/ChatGPT_Image_Jul_2__2025__10_43_21_PM-removebg-preview.png" class="img1" alt="logo">
+      <a class="navbar-brand gradient-text" href="#">SWEETELLA</a>
+      <div style="width: 2px; height: 40px; background-color: #ff82c0;"></div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" style="color: #fc3398;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" style="color: #fc3398;">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" data-bs-toggle="dropdown" style="color: #fc3398;">
+              Menu
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">BIRTHDAY CAKE</a></li>
+              <li><a class="dropdown-item" href="#">CUPCAKES</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">CANDY</a></li>
+              <li><a class="dropdown-item" href="#">DONUTS</a></li>
+              <li><a class="dropdown-item" href="#">COOKIES</a></li>
+              <li><a class="dropdown-item" href="#">WEDDING CAKE</a></li>
+              <li><a class="dropdown-item" href="#">MORE . . .</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" style="color: #fc3398;">About</a>
+          </li>
+        </ul>
+
+       <form class="d-flex">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+    style="border-radius: 8px; border: 1px solid rgb(250, 168, 219);">
+
+  <button class="btn sweet-btn" type="button" style="margin-right: 10px; border-radius: 5px;">Search</button>
+
+  <button class="btn sweet-btn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" >
+    Login
+  </button>
+</form>
+
+      </div>
+    </div>
+  </nav>
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header text-white">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailInput" style="border: 2px solid rgb(248, 103, 152)" required>
+            <div class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" style="border: 2px solid rgb(248, 103, 152)" required>
+          </div>
+          <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+          </div>
+        </form>
+      </div>
+
+      <!-- Footer -->
+ <div class="modal-footer custom-footer">
+  <button type="button" class="btn btn login-btn" onclick="handleLogin()">Login</button>
+  <button type="button" class="btn btn close-btn" data-bs-dismiss="modal">Close</button>
+</div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+      
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="images/pexels-brent-keane-181485-1702373.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>WEDDING CAKE</h2>
+        <p>(: Thank you for your love :)</p>
+        <button class="btn">Visit Us</button>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/pexels-karolina-grabowska-4016521.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>CANDIES</h2>
+        <p>(: Thank you for your love :)</p>
+        <button class="btn">Visit Us</button>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/pexels-julias-torten-und-tortchen-434418-1120464.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>CUPCAKES</h2>
+        <p>(: Thank you for your love :)</p>
+        <button class="btn">Visit Us</button>
+      </div>
+    </div>
+
+    <div class="carousel-item active">
+      <img src="images/pexels-pavel-danilyuk-7180713.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>BIRTHDAY CAKE</h2>
+        <p>(: Thank you for your love :)</p>
+        <button class="btn">Visit Us</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+
+  </button>
+
+<div class="icons">
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-whatsapp-square"></i>
+  <i class="fab fa-twitter-square"></i>
+  <i class="fab fa-linkedin"></i>
+  <i class="fab fa-instagram-square"></i>
+</div>
+
+</div>
+
+
+ <div class="bg">
+  <a class="navbar-brand1 gradient-text1" href="#">WELCOME</a>
+
+  <div class="paragraph">
+    <p class="p1">
+      Thank you for visiting our website and we hope you have a pleasant visit. If you need anything, please call us. There are delicious sweets that you will love and will not be able to resist. Our prices are amazing and beyond imagination.
+    </p>
+    <button class="btn1">Learn more</button>
+  </div>
+</div>
+
+   <hr>
+
+  
+    <div class="title1">
+
+     <p class="p2">Our Best Sellers</p>
+
+    </div>
+
+
+   <div class="accordion" style="border-radius: 10px;" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header shadow bg-body rounded" id="headingOne">
+      <button class="accordion-button shadow bg-body rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         <a class="navbar-brand2 gradient-text2" href="#">BIRTHDAY CAKES</a>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>At Sweetella, every birthday cake begins with care and creativity — </strong>We begin by preparing soft, fluffy layers using a rich, buttery pastry that's baked until golden brown. After cooling, each layer is generously filled and topped with our signature buttercream—smooth as silk, and just the right amount of sweetness.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header shadow bg-body rounded" id="headingTwo">
+      <button class="accordion-button collapsed shadow bg-body rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       <a class="navbar-brand2 gradient-text2" href="#">WEDDING CAKES</a>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>At Sweetella, wedding cakes are more than desserts —</strong> they’re handcrafted symbols of love and celebration. Each tier is baked fresh with premium ingredients, ensuring a rich flavor and perfect texture that reflects the sophistication of your big day.Every Sweetella wedding cake is a blend of timeless beauty and exquisite taste — made to be admired, shared, and remembered forever.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header shadow bg-body rounded" id="headingThree">
+      <button class="accordion-button collapsed shadow bg-body rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="navbar-brand2 gradient-text2" href="#">CUPCAKES</a>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>At Sweetella, cupcakes are little pieces of happiness — </strong>perfectly baked, beautifully frosted, and bursting with flavor. Each cupcake is handcrafted in small batches to ensure moist texture, rich taste, and a picture-perfect finish.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+
+
+
+
+  <div class="bg1">
+ 
+     <div class="title2">
+     <p class="p3">Translate From English To Arabic</p>
+    </div>
+
+
+<div id="copyAlert" class="copy-alert">Copied to clipboard!</div>
+
+<div class="paragraph">
+  <span class="p4">Write And Translate</span>
+  <span class="p5">Press Here</span>
+
+ <div class="copy-container">
+  <button class="btn2" id="copyBtn">Copy</button>
+
+  <textarea rows="6" cols="123">translate:</textarea>
+
+</div>
+
+</div> 
+
+
+  </div> 
+
+
+<div id="customAlert" class="custom-alert">
+  <div class="alert-box">
+    <div class="alert-header">https://github.com/Shahd-Abdelrazek</div>
+    <div class="alert-body">
+      <p class="p6">Copied</p>
+      <button id="okBtn">OK</button>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+
+
+  <div class="bg1">
+ 
+     <div class="title2">
+     <p class="p3">Translate From English To Italy</p>
+    </div>
+
+
+<div id="copyAlert" class="copy-alert">Copied to clipboard!</div>
+
+<div class="paragraph">
+  <span class="p4">Write And Translate</span>
+  <span class="p5">Press Here</span>
+
+ <div class="copy-container">
+  <button class="btn2" id="copyBtn">Copy</button>
+
+  <textarea rows="6" cols="123">translate:</textarea>
+
+</div>
+
+</div> 
+
+
+  </div> 
+
+
+<div id="customAlert" class="custom-alert">
+  <div class="alert-box">
+    <div class="alert-header">https://github.com/Shahd-Abdelrazek</div>
+    <div class="alert-body">
+      <p class="p6">Copied</p>
+      <button id="okBtn">OK</button>
+    </div>
+  </div>
+</div>
+
+   
+
+<hr>
+
+
+
+
+
+  <div class="bg1">
+ 
+     <div class="title2">
+     <p class="p3">Translate From English To German</p>
+    </div>
+
+
+<div id="copyAlert" class="copy-alert">Copied to clipboard!</div>
+
+<div class="paragraph">
+  <span class="p4">Write And Translate</span>
+  <span class="p5">Press Here</span>
+
+ <div class="copy-container">
+  <button class="btn2" id="copyBtn">Copy</button>
+
+  <textarea rows="6" cols="123">translate:</textarea>
+
+</div>
+
+</div> 
+
+
+  </div> 
+
+
+<div id="customAlert" class="custom-alert">
+  <div class="alert-box">
+    <div class="alert-header">https://github.com/Shahd-Abdelrazek</div>
+    <div class="alert-body">
+      <p class="p6">Copied</p>
+      <button id="okBtn">OK</button>
+    </div>
+  </div>
+</div>
+
+   
+
+<hr>
+
+
+<div class="im1"></div>
+
+
+<div class="bg2">
+
+   <div class="title3">
+     <p class="p7  navbar-brand1 gradient-text3">OUR MOST REQUESTED ITEMS </p>
+    </div>
+
+</div>
+
+
+
+
+<div class="card-container">
+  <div class="cardd">
+    <img src="images/pexels-taryn-elliott-4099126.jpg">
+    <div class="card-content">
+      <h3>CUPCAKES</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="cardd">
+    <img src="images/pexels-jeremy-wong-382920-1038711.jpg">
+    <div class="card-content">
+      <h3>WEDDING CAKE</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="cardd">
+    <img src="images/pexels-gordon-ky-331483739-14612608.jpg">
+    <div class="card-content">
+      <h3>BIRTHDAY CAKE</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="cardd">
+    <img src="images/pexels-polina-tankilevitch-5469044.jpg">
+    <div class="card-content">
+      <h3>CANDIES</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="cardd">
+    <img src="images/pexels-cottonbro-4686958.jpg">
+    <div class="card-content">
+      <h3>DONUTS</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="cardd">
+    <img src="images/pexels-karolina-grabowska-5477986.jpg">
+    <div class="card-content">
+      <h3>CUPCAKES</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="card1">
+    <img src="images/pexels-ron-lach-10033205.jpg">
+    <div class="card-content">
+      <h3>BIRTHDAY CAKE</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+
+  <div class="card1">
+    <img src="images/pexels-rquiros-1727415.jpg">
+    <div class="card-content">
+      <h3>WEDDING CAKE</h3>
+      <p>Made with love for you :)</p>
+      <button>Know More</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="im2"></div>
+
+
+<hr class="hr1">
+
+
+
+<div class="bg3">
+
+   <div class="title4">
+     <p class="p8  navbar-brand1 gradient-text3">THANKS FOR</p>
+    </div>
+
+</div>
+
+
+
+
+<div class="container3">
+
+
+<div class="card6 bg-dark text-white overlay-card shadow position-relative">
+  <div class="image-wrapper">
+    <img src="images/pexels-chloekalaartist-1043474.jpg" class="card-img" alt="...">
+    <div class="img-overlay"></div>
+    <img src="images/pexels-chloekalaartist-1043474.jpg" class="small-img" alt="icon">
+  </div>
+
+  <div class="card-img-overlay overlay-text">
+    <h5 class="card-title">All Thanks And Appreciation</h5>
+    <p class="card-text"><i class="far fa-clock fa-clock"></i> June 17,2025</p>
+  </div>
+
+
+  <p class="card-text1">Eng. Ahmed Mohamed</p>
+  <p class="card-text2">Director of UI/UX</p>
+</div>
+
+
+
+
+<div class="card bg-dark text-white overlay-card shadow position-relative">
+  <div class="image-wrapper">
+    <img src="images/pexels-pavel-danilyuk-6996246.jpg" class="card-img" alt="...">
+    <div class="img-overlay"></div>
+    <img src="images/pexels-pavel-danilyuk-6996246.jpg" class="small-img" alt="icon">
+  </div>
+
+  <div class="card-img-overlay overlay-text">
+    <h5 class="card-title">All Thanks And Appreciation</h5>
+    <p class="card-text"><i class="far fa-clock fa-clock"></i> June 17,2025</p>
+  </div>
+
+
+  <p class="card-text1">chef. Sara Mahmoud</p>
+  <p class="card-text2">Responsible for oriental sweets</p>
+</div>
+
+
+
+<div class="card bg-dark text-white overlay-card shadow position-relative ">
+  <div class="image-wrapper">
+    <img src="images/pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg" class="card-img" alt="...">
+    <div class="img-overlay"></div>
+    <img src="images/pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg" class="small-img" alt="icon">
+  </div>
+
+  <div class="card-img-overlay overlay-text ">
+    <h5 class="card-title">All Thanks And Appreciation</h5>
+    <p class="card-text"><i class="far fa-clock fa-clock"></i> June 17,2025</p>
+  </div>
+
+
+  <p class="card-text1">chef. Ali Esam</p>
+  <p class="card-text2">Responsible for Western sweets</p>
+</div>
+
+
+</div>
+
+<hr class="hr2">
+
+
+  <div class="title5">
+     <p class="p9  navbar-brand1 gradient-text4">SWEETELLA NEWS</p>
+    </div>
+
+<div class="podcast-card">
+  <div class="podcast-content">
+    <h2>Podcast Title</h2>
+    <p class="date"><i class="fas fa-calendar-alt"></i> Tus, Oct 25th 2025</p>
+    <div class="blue-divider"></div>
+    <p class="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus quod quam impedit fugit exercitationem corporis odit possimus consectetur?
+    </p>
+    <div class="tags">
+      <span><i class="fas fa-tag"></i> Podcast</span>
+      <span><i class="fas fa-clock"></i> 55 mins</span>
+      <span class="play"><i class="fas fa-play"></i> Play Episode</span>
+    </div>
+  </div>
+  <div class="podcast-image">
+    <div class="image-inner"></div>
+    <div class="blue-overlay"></div>
+  </div>
+</div>
+
+<div class="podcast-card1">
+  <div class="podcast-image1">
+    <div class="image-inner1"></div>
+    <div class="blue-overlay1"></div>
+  </div>
+  <div class="podcast-content1">
+    <h2>Podcast Title</h2>
+    <p class="date1"><i class="fas fa-calendar-alt"></i> Sun, June 17th 2025</p>
+    <div class="blue-divider1"></div>
+    <p class="description1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus quod quam impedit fugit exercitationem corporis odit possimus consectetur?
+    </p>
+    <div class="tags1">
+      <span><i class="fas fa-tag"></i> Podcast</span>
+      <span><i class="fas fa-clock"></i> 55 mins</span>
+      <span class="play1"><i class="fas fa-play"></i> Play Episode</span>
+    </div>
+  </div>
+</div>
+
+<div class="podcast-card3">
+  <div class="podcast-content3">
+    <h2>Podcast Title</h2>
+    <p class="date3"><i class="fas fa-calendar-alt"></i> Mon, May 25th 2025</p>
+    <div class="blue-divider3"></div>
+    <p class="description3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus quod quam impedit fugit exercitationem corporis odit possimus consectetur?
+    </p>
+    <div class="tags3">
+      <span><i class="fas fa-tag"></i> Podcast</span>
+      <span><i class="fas fa-clock"></i> 55 mins</span>
+      <span class="play3"><i class="fas fa-play"></i> Play Episode</span>
+    </div>
+  </div>
+  <div class="podcast-image3">
+    <div class="image-inner3"></div>
+    <div class="blue-overlay3"></div>
+  </div>
+</div>
+
+<div class="podcast-card4">
+  <div class="podcast-image4">
+    <div class="image-inner4"></div>
+    <div class="blue-overlay4"></div>
+  </div>
+  <div class="podcast-content4">
+    <h2>Podcast Title</h2>
+    <p class="date4"><i class="fas fa-calendar-alt"></i> Sat, Dec 6th 2025</p>
+    <div class="blue-divider4"></div>
+    <p class="description4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus quod quam impedit fugit exercitationem corporis odit possimus consectetur?
+    </p>
+    <div class="tags4">
+      <span><i class="fas fa-tag"></i> Podcast</span>
+      <span><i class="fas fa-clock"></i> 55 mins</span>
+      <span class="play4"><i class="fas fa-play"></i> Play Episode</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+ <div class="title6">
+     <p class="p10  navbar-brand1 gradient-text5">JOIN US</p>
+    </div>
+
+
+  <div class="container4">
+
+  <div class="card-im shadow-lg p-3 mb-5 bg-body rounded">
+    <p class="p11">Subscribe Now</p>
+    <div class="img-youtube">
+      <img src="images/alexander-shatov-k1xf2D7jWUs-unsplash-scaled-removebg-preview.png">
+    </div>
+    <p class="p12">Go to link</p>
+  </div>
+
+  <div class="card-im1 shadow-lg p-3 mb-5 bg-body rounded">
+    <p class="p13">Follow</p>
+    <div class="img-youtube1">
+      <img src="images/images-removebg-preview.png">
+    </div>
+    <p class="p14">Go to link</p>
+  </div>
+
+  <div class="card-im shadow-lg p-3 mb-5 bg-body rounded">
+    <p class="p11">Like the page</p>
+    <div class="img-youtube">
+      <img src="images/WhatsApp_Image_2025-07-10_at_05.21.59_ec007aa2-removebg-preview(1).png">
+    </div>
+    <p class="p12">Go to link</p>
+  </div>
+
+  <div class="card-im shadow-lg p-3 mb-5 bg-body rounded">
+    <p class="p11">Watch videos</p>
+    <div class="img-youtube">
+      <img src="images/WhatsApp_Image_2025-07-10_at_05.22.00_15012650-removebg-preview.png">
+    </div>
+    <p class="p12">Go to link</p>
+  </div>
+
+</div>
+
+
+
+<div class="container5">
+  <div class="img3">
+    <div class="L1"></div>
+    <div class="L1"></div>
+    <div class="L1"></div>
+
+    <div class="i1">
+      <img src="images/ChatGPT_Image_Jul_2__2025__10_43_21_PM-removebg-preview.png" class="im3">
+      <span class="sp5">Good Company</span>
+    </div>
+
+    <div class="i1">
+      <img src="images/ChatGPT_Image_Jul_2__2025__10_43_21_PM-removebg-preview.png" class="im3">
+      <span class="sp5">Important links</span>
+    </div>
+
+    <div class="i1">
+      <img src="images/ChatGPT_Image_Jul_2__2025__10_43_21_PM-removebg-preview.png" class="im4">
+      <span class="sp5">Vision</span>
+    </div>
+
+    <div class="L2"></div>
+    <div class="L2"></div>
+    <div class="L2"></div>
+  </div>
+
+  <div class="link1">
+    <p class="lin1">Tel: 000-000-000</p>
+    <p class="lin1">Address: EGYPT</p>
+    <p class="lin1">Fax: 000-000-000</p>
+  </div>
+
+  <div class="link2">
+    <p class="lin2">Visit Us</p>
+    <p class="lin2">Take a look</p>
+    <p class="lin2">Your health is more important</p>
+  </div>
+
+  <div class="link1">
+    <p class="lin1">Services for all</p>
+    <p class="lin1">Provide best services</p>
+    <p class="lin1">You will be better than before</p>
+  </div>
+
+  <div class="L3"></div>
+
+  <div class="title7">
+    <p class="p15 navbar-brand1 gradient-text6">COPYRIGHT © 2025 SHAHD ABDELRAZEK, GOOD COMPANY. ALL RIGHTS</p>
+  </div>
+
+  <div class="L4"></div>
+</div>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+   </body>
+
+</html>
