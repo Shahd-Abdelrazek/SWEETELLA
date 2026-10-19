@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Follow Sweetella on social media.">
+  <title>Sweetella</title>
+
+  <script>
+    try {
+      var theme = localStorage.getItem("sweetella-theme");
+      if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  </script>
+  <meta name="theme-color" content="#f86999">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@500..700&family=Josefin+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="join" data-title-key="nav.join">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('images/pexels-vojtech-okenka-127162-1055272.jpg')"></div>
+      <div class="container page-hero-inner">
+        <nav aria-label="breadcrumb">
+          <ol class="sweet-breadcrumb">
+            <li><a href="index.html" data-i18n="nav.home"></a></li>
+            <li aria-current="page" data-i18n="nav.join"></li>
+          </ol>
+        </nav>
+        <p class="kicker" data-i18n="join.kicker"></p>
+        <h1 class="page-hero-title" data-i18n="join.title"></h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="join-grid">
+          <a class="join-card join-twitter reveal" href="#" aria-label="Twitter">
+            <i class="fab fa-twitter join-bg-icon" aria-hidden="true"></i>
+            <span class="join-badge"><i class="fab fa-twitter" aria-hidden="true"></i></span>
+            <p class="join-label" data-i18n="join.subscribe"></p>
+            <span class="join-brand">Twitter</span>
+            <span class="join-go"><span data-i18n="join.go"></span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="join-card join-whatsapp reveal" href="#" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp join-bg-icon" aria-hidden="true"></i>
+            <span class="join-badge"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+            <p class="join-label" data-i18n="join.follow"></p>
+            <span class="join-brand">WhatsApp</span>
+            <span class="join-go"><span data-i18n="join.go"></span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="join-card join-linkedin reveal" href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in join-bg-icon" aria-hidden="true"></i>
+            <span class="join-badge"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
+            <p class="join-label" data-i18n="join.like"></p>
+            <span class="join-brand">LinkedIn</span>
+            <span class="join-go"><span data-i18n="join.go"></span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="join-card join-instagram reveal" href="#" aria-label="Instagram">
+            <i class="fab fa-instagram join-bg-icon" aria-hidden="true"></i>
+            <span class="join-badge"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+            <p class="join-label" data-i18n="join.watch"></p>
+            <span class="join-brand">Instagram</span>
+            <span class="join-go"><span data-i18n="join.go"></span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+        </div>
+
+        <div class="contact-strip reveal">
+          <h2 class="section-title small" data-i18n="join.contact"></h2>
+          <div class="contact-items">
+            <div><i class="fa-solid fa-phone" aria-hidden="true"></i><span data-i18n="footer.tel"></span><bdi>000-000-000</bdi></div>
+            <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span data-i18n="footer.address"></span><strong data-i18n="footer.egypt"></strong></div>
+            <div><i class="fa-solid fa-fax" aria-hidden="true"></i><span data-i18n="footer.fax"></span><bdi>000-000-000</bdi></div>
+          </div>
+          <a class="btn-light-sweet" href="contact.html"><span data-i18n="nav.contact"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

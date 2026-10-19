@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design your own cake at Sweetella: choose size, flavour, filling and toppings and see the price and calories live.">
+  <title>Sweetella</title>
+
+  <script>
+    try {
+      var theme = localStorage.getItem("sweetella-theme");
+      if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  </script>
+  <meta name="theme-color" content="#f86999">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@500..700&family=Josefin+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="builder" data-title-key="nav.builder">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('images/pexels-pavel-danilyuk-7180713.jpg')"></div>
+      <div class="container page-hero-inner">
+        <nav aria-label="breadcrumb">
+          <ol class="sweet-breadcrumb">
+            <li><a href="index.html" data-i18n="nav.home"></a></li>
+            <li aria-current="page" data-i18n="nav.builder"></li>
+          </ol>
+        </nav>
+        <p class="kicker" data-i18n="builder.kicker"></p>
+        <h1 class="page-hero-title" data-i18n="builder.title"></h1>
+        <p class="page-hero-sub" data-i18n="builder.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section builder">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-5 order-lg-2">
+            <aside class="preview-card">
+              <p class="side-label"><span class="live-dot"></span> <span data-i18n="builder.preview"></span></p>
+              <div class="cake-stage" id="cakeStage" aria-hidden="true"></div>
+              <p class="side-label mt-3" data-i18n="builder.inside"></p>
+              <div class="cake-inside" id="cakeInside"></div>
+              <p class="side-label mt-4" data-i18n="builder.summary"></p>
+              <ul class="cake-summary" id="cakeSummary"></ul>
+              <div class="cake-kcal" id="cakeKcal"></div>
+              <div class="cake-allergens" id="cakeAllergens"></div>
+              <div class="cake-price"><span data-i18n="cart.total"></span><strong id="cakePrice"></strong></div>
+              <p class="cake-warning" id="cakeWarning" role="alert" hidden></p>
+              <button type="button" class="btn-sweet w-100 justify-content-center" id="addCake"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> <span data-i18n="builder.add"></span></button>
+              <div class="share-row">
+                <button type="button" class="share-btn" id="shareCake"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> <span data-i18n="share.share"></span></button>
+                <a class="share-btn wa" id="shareWhatsApp" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="share.whatsapp"></span></a>
+                <button type="button" class="share-btn" id="downloadCake"><i class="fa-solid fa-download" aria-hidden="true"></i> <span data-i18n="share.download"></span></button>
+              </div>
+              <button type="button" class="link-btn d-block mx-auto mt-2" id="resetCake"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> <span data-i18n="builder.reset"></span></button>
+            </aside>
+          </div>
+
+          <div class="col-lg-7 order-lg-1">
+            <div class="step-card guests-card">
+              <h3 class="step-title"><span class="step-num"><i class="fa-solid fa-users" aria-hidden="true"></i></span><span data-i18n="guests.title"></span></h3>
+              <p class="guests-text" data-i18n="guests.text"></p>
+              <div class="guests-row">
+                <div class="stepper">
+                  <button type="button" data-guests="-1" aria-label="-"><i class="fa-solid fa-minus" aria-hidden="true"></i></button>
+                  <input type="number" id="guestCount" min="1" max="200" value="10" inputmode="numeric" data-i18n-aria="guests.title">
+                  <button type="button" data-guests="1" aria-label="+"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+                </div>
+                <div class="guest-result" id="guestResult" aria-live="polite"></div>
+                <button type="button" class="btn-sweet btn-sm-sweet" id="applyGuests"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="guests.apply"></span></button>
+              </div>
+            </div>
+
+            <p class="stock-note"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span data-i18n="builder.stockNote"></span></p>
+            <div id="builderSteps" class="builder-steps"></div>
+            <div class="step-card">
+              <h3 class="step-title"><span class="step-num" id="messageStepNum">8</span><span data-i18n="builder.step.message"></span></h3>
+              <div class="field">
+                <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                <input type="text" class="form-control sweet-input" id="cakeMessage" maxlength="25" data-i18n-placeholder="builder.messagePh" data-i18n-aria="builder.step.message">
+              </div>
+              <small class="msg-count" id="messageCount">0/25</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/builder.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

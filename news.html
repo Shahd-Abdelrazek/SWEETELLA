@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweetella news and podcast episodes.">
+  <title>Sweetella</title>
+
+  <script>
+    try {
+      var theme = localStorage.getItem("sweetella-theme");
+      if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  </script>
+  <meta name="theme-color" content="#f86999">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@500..700&family=Josefin+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="news" data-title-key="nav.news">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('images/pexels-roacunha-2531546.jpg')"></div>
+      <div class="container page-hero-inner">
+        <nav aria-label="breadcrumb">
+          <ol class="sweet-breadcrumb">
+            <li><a href="index.html" data-i18n="nav.home"></a></li>
+            <li aria-current="page" data-i18n="nav.news"></li>
+          </ol>
+        </nav>
+        <p class="kicker" data-i18n="news.kicker"></p>
+        <h1 class="page-hero-title" data-i18n="news.title"></h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="news-list">
+          <article class="news-card reveal">
+            <div class="news-img"><img src="images/pexels-mccutcheon-1191639.jpg" alt="" loading="lazy"></div>
+            <div class="news-body">
+              <p class="news-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <time datetime="2025-10-25">2025-10-25</time></p>
+              <h3 data-i18n="news.podcastTitle"></h3>
+              <div class="news-divider"></div>
+              <p class="news-desc" data-i18n="news.desc"></p>
+              <div class="news-tags">
+                <span><i class="fa-solid fa-tag" aria-hidden="true"></i> <span data-i18n="news.tag"></span></span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="news.duration"></span></span>
+                <a href="#" class="news-play"><i class="fa-solid fa-play" aria-hidden="true"></i> <span data-i18n="news.play"></span></a>
+              </div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-img"><img src="images/pexels-anastasia-ilina-makarova-140436704-10510747.jpg" alt="" loading="lazy"></div>
+            <div class="news-body">
+              <p class="news-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <time datetime="2025-06-17">2025-06-17</time></p>
+              <h3 data-i18n="news.podcastTitle"></h3>
+              <div class="news-divider"></div>
+              <p class="news-desc" data-i18n="news.desc"></p>
+              <div class="news-tags">
+                <span><i class="fa-solid fa-tag" aria-hidden="true"></i> <span data-i18n="news.tag"></span></span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="news.duration"></span></span>
+                <a href="#" class="news-play"><i class="fa-solid fa-play" aria-hidden="true"></i> <span data-i18n="news.play"></span></a>
+              </div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-img"><img src="images/pexels-roacunha-2531546.jpg" alt="" loading="lazy"></div>
+            <div class="news-body">
+              <p class="news-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <time datetime="2025-05-25">2025-05-25</time></p>
+              <h3 data-i18n="news.podcastTitle"></h3>
+              <div class="news-divider"></div>
+              <p class="news-desc" data-i18n="news.desc"></p>
+              <div class="news-tags">
+                <span><i class="fa-solid fa-tag" aria-hidden="true"></i> <span data-i18n="news.tag"></span></span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="news.duration"></span></span>
+                <a href="#" class="news-play"><i class="fa-solid fa-play" aria-hidden="true"></i> <span data-i18n="news.play"></span></a>
+              </div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-img"><img src="images/pexels-vojtech-okenka-127162-1055272.jpg" alt="" loading="lazy"></div>
+            <div class="news-body">
+              <p class="news-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <time datetime="2025-12-06">2025-12-06</time></p>
+              <h3 data-i18n="news.podcastTitle"></h3>
+              <div class="news-divider"></div>
+              <p class="news-desc" data-i18n="news.desc"></p>
+              <div class="news-tags">
+                <span><i class="fa-solid fa-tag" aria-hidden="true"></i> <span data-i18n="news.tag"></span></span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="news.duration"></span></span>
+                <a href="#" class="news-play"><i class="fa-solid fa-play" aria-hidden="true"></i> <span data-i18n="news.play"></span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

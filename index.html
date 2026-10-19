@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweetella bakery — cakes, cupcakes, donuts and sweets made with love. Order online or design your own cake.">
+  <title>Sweetella | Sweet Moments</title>
+
+  <script>
+    try {
+      var theme = localStorage.getItem("sweetella-theme");
+      if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  </script>
+  <meta name="theme-color" content="#f86999">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@500..700&family=Josefin+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="home" data-title-key="nav.home">
+  <header id="site-header"></header>
+
+  <main>
+    <!-- HERO CAROUSEL -->
+    <section class="hero">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/pexels-pavel-danilyuk-7180713.jpg" alt="Birthday cake">
+            <div class="hero-caption">
+              <p class="hero-kicker" data-i18n="hero.thanks"></p>
+              <h1 class="hero-title" data-i18n="cat.birthday"></h1>
+              <a class="btn-sweet" href="menu.html#birthday"><span data-i18n="hero.visit"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/pexels-brent-keane-181485-1702373.jpg" alt="Wedding cake">
+            <div class="hero-caption">
+              <p class="hero-kicker" data-i18n="hero.thanks"></p>
+              <h2 class="hero-title" data-i18n="cat.wedding"></h2>
+              <a class="btn-sweet" href="menu.html#wedding"><span data-i18n="hero.visit"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/pexels-karolina-grabowska-4016521.jpg" alt="Candies">
+            <div class="hero-caption">
+              <p class="hero-kicker" data-i18n="hero.thanks"></p>
+              <h2 class="hero-title" data-i18n="cat.candies"></h2>
+              <a class="btn-sweet" href="menu.html#candies"><span data-i18n="hero.visit"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/pexels-julias-torten-und-tortchen-434418-1120464.jpg" alt="Cupcakes">
+            <div class="hero-caption">
+              <p class="hero-kicker" data-i18n="hero.thanks"></p>
+              <h2 class="hero-title" data-i18n="cat.cupcakes"></h2>
+              <a class="btn-sweet" href="menu.html#cupcakes"><span data-i18n="hero.visit"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="hero-arrow"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></span><span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="hero-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span><span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="hero-social" aria-label="Social media">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- WELCOME -->
+    <section class="section welcome">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="welcome-art">
+              <img src="images/pexels-tima-miroshnichenko-7033808.jpg" alt="Sweetella sweets" class="welcome-img-main">
+              <img src="images/ChatGPT_Image_Jul_2__2025__10_43_21_PM-removebg-preview.png" alt="" class="welcome-badge">
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <p class="kicker" data-i18n="welcome.kicker"></p>
+            <h2 class="section-title" data-i18n="welcome.title"></h2>
+            <p class="lead-text" data-i18n="welcome.text"></p>
+            <a class="btn-sweet" href="menu.html"><span data-i18n="welcome.more"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="section best">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="best.kicker"></p>
+          <h2 class="section-title" data-i18n="best.title"></h2>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7 reveal">
+            <div class="accordion sweet-accordion" id="bestSellers">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span class="acc-num">01</span><span data-i18n="best.birthday"></span>
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#bestSellers">
+                  <div class="accordion-body"><strong data-i18n="desc.birthday.lead"></strong> <span data-i18n="desc.birthday.body"></span></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span class="acc-num">02</span><span data-i18n="best.wedding"></span>
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#bestSellers">
+                  <div class="accordion-body"><strong data-i18n="desc.wedding.lead"></strong> <span data-i18n="desc.wedding.body"></span></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="acc-num">03</span><span data-i18n="best.cupcakes"></span>
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#bestSellers">
+                  <div class="accordion-body"><strong data-i18n="desc.cupcakes.lead"></strong> <span data-i18n="desc.cupcakes.body"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal">
+            <div class="best-photo">
+              <img src="images/pexels-jeshoots-271458.jpg" alt="Sweetella best sellers">
+              <a class="best-photo-cta" href="menu.html">
+                <span data-i18n="nav.fullMenu"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN A CAKE -->
+    <section class="builder-cta-wrap">
+      <div class="container">
+        <a class="builder-cta reveal" href="builder.html">
+          <div>
+            <p class="kicker" data-i18n="builder.kicker"></p>
+            <h2 data-i18n="builder.title"></h2>
+            <p data-i18n="builder.subtitle"></p>
+            <span class="btn-light-sweet"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="nav.builder"></span></span>
+          </div>
+          <span class="cta-cake" aria-hidden="true">🎂</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CUSTOMER FEEDBACK -->
+    <section class="section reviews-home">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="fb.kicker"></p>
+          <h2 class="section-title" data-i18n="fb.title"></h2>
+        </div>
+        <div class="review-slider reveal" id="reviewSlider" role="region" aria-roledescription="carousel" data-i18n-aria="fb.title">
+          <button type="button" class="slider-arrow prev" data-slide="-1" data-i18n-aria="rev.prev"><i class="fa-solid fa-chevron-left flip-rtl" aria-hidden="true"></i></button>
+          <div class="slider-viewport">
+            <div class="review-track" id="reviewList"></div>
+          </div>
+          <button type="button" class="slider-arrow next" data-slide="1" data-i18n-aria="rev.next"><i class="fa-solid fa-chevron-right flip-rtl" aria-hidden="true"></i></button>
+        </div>
+        <div class="slider-dots" id="reviewDots"></div>
+        <div class="text-center mt-5">
+          <a class="btn-sweet" href="feedback.html"><span data-i18n="fb.seeAll"></span> <i class="fa-solid fa-arrow-right flip-rtl" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OCCASION REMINDERS -->
+    <section class="section reminders" id="reminders">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="rem.kicker"></p>
+          <h2 class="section-title" data-i18n="rem.title"></h2>
+          <p class="section-sub" data-i18n="rem.subtitle"></p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <form class="reminder-form reveal" id="reminderForm">
+              <div class="mb-3">
+                <label class="form-label" for="remName" data-i18n="rem.name"></label>
+                <input class="form-control sweet-input" id="remName" name="remName" maxlength="30" required data-i18n-placeholder="rem.namePh">
+              </div>
+              <div class="row g-3 mb-3">
+                <div class="col-6">
+                  <label class="form-label" for="remOccasion" data-i18n="rem.occasion"></label>
+                  <select class="form-select sweet-input" id="remOccasion" name="remOccasion">
+                    <option value="birthday" data-i18n="occ.birthday"></option>
+                    <option value="anniversary" data-i18n="occ.anniversary"></option>
+                    <option value="graduation" data-i18n="occ.graduation"></option>
+                    <option value="other" data-i18n="occ.other"></option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label class="form-label" for="remDate" data-i18n="co.date"></label>
+                  <input class="form-control sweet-input" id="remDate" name="remDate" type="date" required>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="remBefore" data-i18n="rem.remind"></label>
+                <select class="form-select sweet-input" id="remBefore" name="remBefore">
+                    <option value="1" data-i18n="rem.before1"></option>
+                    <option value="3" data-i18n="rem.before3"></option>
+                    <option value="7" data-i18n="rem.before7"></option>
+                </select>
+              </div>
+              <button type="submit" class="btn-sweet w-100 justify-content-center"><i class="fa-regular fa-bell" aria-hidden="true"></i> <span data-i18n="rem.save"></span></button>
+            </form>
+          </div>
+          <div class="col-lg-7">
+            <div class="reminder-panel reveal">
+              <ul class="reminder-list" id="reminderList"></ul>
+              <div class="reminder-empty" id="reminderEmpty">
+                <span>📅</span>
+                <p data-i18n="rem.empty"></p>
+              </div>
+              <p class="rem-help"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-i18n="rem.help"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE PAGES -->
+    <section class="section explore">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="explore.kicker"></p>
+          <h2 class="section-title" data-i18n="explore.title"></h2>
+        </div>
+        <div class="explore-grid">
+          <a class="explore-tile reveal" href="menu.html">
+            <img src="images/pexels-taryn-elliott-4099126.jpg" alt="">
+            <div class="explore-text"><i class="fa-solid fa-cake-candles" aria-hidden="true"></i><h3 data-i18n="nav.menu"></h3><p data-i18n="explore.menu"></p></div>
+          </a>
+          <a class="explore-tile reveal" href="team.html">
+            <img src="images/pexels-pavel-danilyuk-6996246.jpg" alt="">
+            <div class="explore-text"><i class="fa-solid fa-user-group" aria-hidden="true"></i><h3 data-i18n="nav.team"></h3><p data-i18n="explore.team"></p></div>
+          </a>
+          <a class="explore-tile reveal" href="news.html">
+            <img src="images/pexels-mccutcheon-1191639.jpg" alt="">
+            <div class="explore-text"><i class="fa-solid fa-newspaper" aria-hidden="true"></i><h3 data-i18n="nav.news"></h3><p data-i18n="explore.news"></p></div>
+          </a>
+          <a class="explore-tile reveal" href="join.html">
+            <img src="images/pexels-vojtech-okenka-127162-1055272.jpg" alt="">
+            <div class="explore-text"><i class="fa-solid fa-heart" aria-hidden="true"></i><h3 data-i18n="nav.join"></h3><p data-i18n="explore.join"></p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/reminders.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

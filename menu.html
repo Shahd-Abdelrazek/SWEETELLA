@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Sweetella's menu: birthday and wedding cakes, cupcakes, donuts and candies, with a diet menu, calories and allergen info.">
+  <title>Sweetella</title>
+
+  <script>
+    try {
+      var theme = localStorage.getItem("sweetella-theme");
+      if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  </script>
+  <meta name="theme-color" content="#f86999">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@500..700&family=Josefin+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="menu" data-title-key="nav.menu">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('images/pexels-n-voitkevich-7826287.jpg')"></div>
+      <div class="container page-hero-inner">
+        <nav aria-label="breadcrumb">
+          <ol class="sweet-breadcrumb">
+            <li><a href="index.html" data-i18n="nav.home"></a></li>
+            <li aria-current="page" data-i18n="nav.menu"></li>
+          </ol>
+        </nav>
+        <p class="kicker" data-i18n="menu.love"></p>
+        <h1 class="page-hero-title" data-i18n="menu.title"></h1>
+          <p class="page-hero-sub" data-i18n="menu.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="mode-switch reveal" role="group" data-i18n-aria="diet.title">
+          <button type="button" data-mode="regular" aria-pressed="true">🍰 <span data-i18n="diet.regular"></span></button>
+          <button type="button" data-mode="diet" aria-pressed="false">🌿 <span data-i18n="diet.diet"></span></button>
+          <span class="mode-thumb" aria-hidden="true"></span>
+        </div>
+        <div class="diet-panel reveal" id="dietPanel" hidden>
+          <div class="diet-panel-text">
+            <strong>🌿 <span data-i18n="diet.title"></span></strong>
+            <p data-i18n="diet.text"></p>
+          </div>
+          <label class="goal-box">
+            <span data-i18n="diet.goal"></span>
+            <input type="number" id="kcalGoal" min="800" max="4000" step="50" value="1500" inputmode="numeric">
+            <small data-i18n="kcal.unit"></small>
+          </label>
+        </div>
+        <div class="filter-bar reveal" role="group" aria-label="Filter">
+          <button type="button" class="filter-pill" data-filter="all" aria-pressed="false" data-i18n="cat.all"></button>
+          <button type="button" class="filter-pill" data-filter="birthday" aria-pressed="false" data-i18n="cat.birthday"></button>
+          <button type="button" class="filter-pill" data-filter="wedding" aria-pressed="false" data-i18n="cat.wedding"></button>
+          <button type="button" class="filter-pill" data-filter="cupcakes" aria-pressed="false" data-i18n="cat.cupcakes"></button>
+          <button type="button" class="filter-pill" data-filter="candies" aria-pressed="false" data-i18n="cat.candies"></button>
+          <button type="button" class="filter-pill" data-filter="donuts" aria-pressed="false" data-i18n="cat.donuts"></button>
+        </div>
+        <div class="avoid-bar reveal" role="group" aria-labelledby="avoidLabel">
+          <span class="avoid-label" id="avoidLabel"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> <span data-i18n="allergen.avoid"></span></span>
+          <button type="button" class="avoid-pill" data-avoid="gluten" aria-pressed="false">🌾 <span data-i18n="allergen.gluten"></span></button>
+          <button type="button" class="avoid-pill" data-avoid="dairy" aria-pressed="false">🥛 <span data-i18n="allergen.dairy"></span></button>
+          <button type="button" class="avoid-pill" data-avoid="eggs" aria-pressed="false">🥚 <span data-i18n="allergen.eggs"></span></button>
+          <button type="button" class="avoid-pill" data-avoid="nuts" aria-pressed="false">🥜 <span data-i18n="allergen.nuts"></span></button>
+          <p class="avoid-note" data-i18n="allergen.note"></p>
+        </div>
+        <div class="diet-bar reveal">
+          <button type="button" class="fav-filter" id="favFilter" aria-pressed="false"><i class="fa-solid fa-heart" aria-hidden="true"></i> <span data-i18n="fav.mine"></span> <span class="fav-count" id="favCount">0</span></button>
+          <div class="dropdown sort-dd">
+            <button type="button" class="sort-btn" id="sortBtn" data-bs-toggle="dropdown" data-bs-offset="0,8" aria-expanded="false" aria-haspopup="true">
+              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+              <span class="sort-pre"><span data-i18n="sort.label"></span>:</span>
+              <strong id="sortCurrent" data-i18n="sort.default"></strong>
+              <i class="fa-solid fa-chevron-down sort-caret" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu sweet-dropdown sort-menu" role="menu" aria-labelledby="sortBtn">
+              <li><button type="button" class="dropdown-item sort-option" data-sort="default" role="menuitemradio" aria-checked="false"><span class="sort-ic"><i class="fa-solid fa-star" aria-hidden="true"></i></span><span data-i18n="sort.default"></span><i class="fa-solid fa-check sort-check" aria-hidden="true"></i></button></li>
+              <li><button type="button" class="dropdown-item sort-option" data-sort="kcal" role="menuitemradio" aria-checked="false"><span class="sort-ic"><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i></span><span data-i18n="sort.kcal"></span><i class="fa-solid fa-check sort-check" aria-hidden="true"></i></button></li>
+              <li><button type="button" class="dropdown-item sort-option" data-sort="priceAsc" role="menuitemradio" aria-checked="false"><span class="sort-ic"><i class="fa-solid fa-arrow-up-wide-short" aria-hidden="true"></i></span><span data-i18n="sort.priceAsc"></span><i class="fa-solid fa-check sort-check" aria-hidden="true"></i></button></li>
+              <li><button type="button" class="dropdown-item sort-option" data-sort="priceDesc" role="menuitemradio" aria-checked="false"><span class="sort-ic"><i class="fa-solid fa-arrow-down-wide-short" aria-hidden="true"></i></span><span data-i18n="sort.priceDesc"></span><i class="fa-solid fa-check sort-check" aria-hidden="true"></i></button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="search-info" id="searchInfo" hidden>
+          <span data-i18n="menu.resultsFor"></span> <strong id="searchTerm"></strong>
+          <button type="button" class="link-btn" id="clearSearch"><i class="fa-solid fa-xmark" aria-hidden="true"></i> <span data-i18n="menu.clear"></span></button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+        <p class="menu-empty" id="menuEmpty" hidden><i class="fa-regular fa-face-frown" aria-hidden="true"></i> <span data-i18n="menu.empty"></span></p>
+      </div>
+    </section>
+
+    <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content sweet-modal item-modal">
+          <button type="button" class="btn-close item-modal-close" data-bs-dismiss="modal" data-i18n-aria="modal.close"></button>
+          <div class="row g-0 item-modal-content" data-product="p1">
+            <div class="col-md-5"><img class="item-modal-img" src="images/pexels-taryn-elliott-4099126.jpg" alt=""></div>
+            <div class="col-md-7 item-modal-text">
+              <p class="kicker" data-i18n="menu.love"></p>
+              <h3 id="itemModalTitle" data-modal-title data-i18n="cat.cupcakes"></h3>
+              <div class="price-row start"><p class="price-tag big" data-price></p><span data-kcal></span></div>
+              <p class="kcal-daily" data-kcal-daily></p>
+              <p class="diet-note" data-diet-note hidden></p>
+              <div class="allergens modal-allergens" data-allergens></div>
+              <p><strong data-modal-lead data-i18n="desc.cupcakes.lead"></strong> <span data-modal-body data-i18n="desc.cupcakes.body"></span></p>
+              <span class="stock-badge static" data-stock-badge></span>
+              <div class="menu-actions mt-3">
+                <button type="button" class="btn-sweet" data-add-to-cart><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> <span data-i18n="cart.add"></span></button>
+                <a class="btn-outline-sweet" href="contact.html" data-i18n="nav.contact"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

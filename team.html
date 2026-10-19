@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the Sweetella team behind every cake.">
+  <title>Sweetella</title>
+
+  <script>
+    try {
+      var theme = localStorage.getItem("sweetella-theme");
+      if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  </script>
+  <meta name="theme-color" content="#f86999">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@500..700&family=Josefin+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="team" data-title-key="nav.team">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('images/pexels-anastasia-ilina-makarova-140436704-10510747.jpg')"></div>
+      <div class="container page-hero-inner">
+        <nav aria-label="breadcrumb">
+          <ol class="sweet-breadcrumb">
+            <li><a href="index.html" data-i18n="nav.home"></a></li>
+            <li aria-current="page" data-i18n="nav.team"></li>
+          </ol>
+        </nav>
+        <p class="kicker" data-i18n="team.kicker"></p>
+        <h1 class="page-hero-title" data-i18n="team.title"></h1>
+          <p class="page-hero-sub" data-i18n="team.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <div class="team-cover">
+              <img src="images/pexels-chloekalaartist-1043474.jpg" alt="" loading="lazy">
+              <div class="team-cover-text">
+                <h3 data-i18n="team.appreciation"></h3>
+                <p><i class="fa-regular fa-clock" aria-hidden="true"></i> <time datetime="2025-06-17">June 17, 2025</time></p>
+              </div>
+            </div>
+            <img src="images/pexels-chloekalaartist-1043474.jpg" alt="Ahmed Mohamed" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4 data-i18n="team.ahmed.name"></h4>
+              <p data-i18n="team.ahmed.role"></p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-cover">
+              <img src="images/pexels-pavel-danilyuk-6996246.jpg" alt="" loading="lazy">
+              <div class="team-cover-text">
+                <h3 data-i18n="team.appreciation"></h3>
+                <p><i class="fa-regular fa-clock" aria-hidden="true"></i> <time datetime="2025-06-17">June 17, 2025</time></p>
+              </div>
+            </div>
+            <img src="images/pexels-pavel-danilyuk-6996246.jpg" alt="Sara Mahmoud" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4 data-i18n="team.sara.name"></h4>
+              <p data-i18n="team.sara.role"></p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-cover">
+              <img src="images/pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg" alt="" loading="lazy">
+              <div class="team-cover-text">
+                <h3 data-i18n="team.appreciation"></h3>
+                <p><i class="fa-regular fa-clock" aria-hidden="true"></i> <time datetime="2025-06-17">June 17, 2025</time></p>
+              </div>
+            </div>
+            <img src="images/pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg" alt="Ali Esam" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4 data-i18n="team.ali.name"></h4>
+              <p data-i18n="team.ali.role"></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
